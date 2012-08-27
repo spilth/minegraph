@@ -1,0 +1,407 @@
+graph {
+  rankdir=LR
+  ranksep=4.0
+
+  // node [shape=square, labelloc=b, height=2, width=2]
+  // Wood [image="wood-pine.png"]
+
+	/*
+  subgraph cluster_0 {
+    label="Basic Recipes"
+    
+    WoodenPlank
+    Sticks
+    Torch
+    CraftingTable
+    Furnace
+    Chest
+  }
+  
+  subgraph cluster_1 {
+    label="Block Recipes"
+
+    Glowstone
+    Wool
+    TNT
+    WoodenSlab
+    StoneSlab
+    WoodenStairs
+    StoneStairs
+    SnowBlock
+    ClayBlock
+    Brick
+    StoneBrick
+    Bookshelf
+    Sandstone
+    SmoothSandstone
+    ChiseledSandstone
+    JackOLantern
+    EnderChest
+  }
+
+  subgraph cluster_2 {
+    label="Tool Recipes"
+
+    WoodenAxe
+    WoodenPickaxe
+    WoodenShovel
+    WoodenHoe
+    
+    IronAxe
+    IronPickaxe
+    IronShovel
+    IronHoe
+
+    DiamondAxe
+    DiamondPickaxe
+    DiamondShovel
+    DiamondHoe
+
+    FlintAndSteel
+    Bucket
+    Compass
+    Map
+    Clock
+    FishingRod
+    Shears
+    FireCharge
+  }
+
+  subgraph clsuter_3 {
+    label="Weapon Recipes"
+
+    WoodenSword
+    IronSword
+    GoldSword
+    DiamonSword
+    Bow
+    Arrows
+  }
+
+  subgraph cluster_4 {
+    label="Armor Recipes"
+
+    LeatherHelmet
+    GoldHelmet
+    IronHelmet
+    DiamondHelmet
+
+    LeatherChestplate
+    GoldChestplate
+    IronChestplate
+    DiamondChestplate
+
+    LeatherLeggings
+    GoldLeggings
+    IronLeggings
+    DiamondLeggings
+
+    LeatherBoots
+    GoldBoots
+    IronBoots
+    DiamondBoots
+  }
+
+  subgraph cluster_5 {
+    label="Transportation Recipes"
+
+    Minecart
+    MinecartWithFurnace
+    MinecartWithChest
+    Rail
+    PoweredRail
+    DetectorRail
+    Boat
+  }
+
+  subgraph cluster_6 {
+    label="Mechanism Recipes"
+
+    WoodenDoor
+    WoodenTrapdoor
+    WoodenPressurePlate
+    Button
+    RedstoneTorch
+    Level
+    TripwireHook
+    NoteBlock
+    Jukebox
+    Dispenser
+    RedstoneRepeater
+    Piston
+    StickyPiston
+    RedstoneLamp
+  }
+
+  subgraph cluster_7 {
+    label="Food Recipes"
+
+    Bowl
+    MushroomStew
+    Bread
+    Sugar
+    Cake
+    Cookie
+    GoldenApple
+    EnchantedGoldenApple
+    MelonBlock
+    MelonSeeds
+    PumpkinSeeds
+  }
+
+  subgraph cluster_8 {
+    label="Misc Recipes"
+
+    Painting
+    Sign
+    Ladder
+    GlassPane
+    IronBar
+    Paper
+    Book
+    BookAndQuill
+    Fence
+    FenceGate
+    Bed
+    GoldIngot
+    EyeOfEnder
+  }
+*/
+  
+  Wood
+
+  // Basic Recipes
+  Wood -- WoodenPlank
+
+  WoodenPlank -- Sticks
+
+  Sticks -- Torch
+  Coal -- Torch
+
+  WoodenPlank -- CraftingTable
+
+  Cobblestone -- Furnace
+
+  WoodenPlank -- Chest
+
+  // Block Recipes
+
+  Coal -- CoalOre
+
+  IronIngot -- IronOre
+
+  LapisLazuliDye -- LapisLazuliOre
+
+  GoldIngot -- GoldOre
+
+  RedstoneDust -- RedstoneOre
+
+  DiamondGems -- DiamondOre
+
+  Emerald -- EmeraldOre
+
+  GlowstoneDust -- Glowstone
+
+  String -- Wool
+
+  Gunpowerder -- TNT
+  Sand -- TNT
+
+  WoodenPlank -- WoodSlab
+
+  // TODO: Stone Slabs
+
+  WoodenPlank -> WoodStairs
+
+  // TODO: Stone Stairs
+
+  Snowballs -- SnowBlock
+
+  Clay -- ClayBlock
+
+  ClayBrick -- Brick
+
+  Stone -- StoneBrick
+
+  WoodenPlank -- Bookshelf
+  Books -- Bookshelf
+
+  Sand -- Sandstone
+
+  Sandstone -- SmoothSandstone
+
+  SandstoneSlab -- ChiseledSandstone
+
+  Pumpkin -- JackOLantern
+  Torch -- JackOLantern
+
+  Obsidian -- EnderChest
+  EyeOfEnder -- EnderChest
+
+  // Tool Recipes
+
+  //// Axes
+
+  Sticks -- IronAxe
+  IronIngot -- IronAxe
+
+  Sticks -- WoodenAxe
+  WoodenPlank -- WoodenAxe
+  
+  Sticks -- GoldenAxe
+  GoldIngot -- GoldenAxe
+
+  Sticks -- DiamondAxe
+  DiamondGems -- DiamondAxe
+
+  //// Pickaxes
+
+  Sticks -- IronPickaxe
+  IronIngot -- IronPickaxe
+
+  //// Shovels
+
+  Sticks -- IronShovel
+  IronIngot -- IronShovel
+
+  //// Hoes
+
+  Sticks -- IronHoe
+  IronIngot -- IronHoe
+
+  // Tools Continued...
+
+  IronIngot -- FlintAndSteel
+  Flint -- FlintAndSteel
+
+  IronIngot -- Bucket
+
+  Paper -- Map
+  Compass -- Map
+
+  GoldIngot -- Clock
+  RedstoneDust -- Clock
+
+  IronIngot -- Compass
+  RedstoneDust -- Compass
+
+  Stick -- FishingRod
+  String -- FishingRod
+  
+  IronIngot -- Shears
+
+  BlazePower -- FireCharge
+  Coal -- FireCharge
+  Gunpower -- FireCharge
+
+  // Weapon Recipes
+
+  //// Swords
+
+  Sticks -- Bow
+  String -- Bow
+
+  Flint -- Arrow
+  Sticks -- Arrow
+  Feather -- Arrow
+ 
+  // Armor Recipes
+
+  // Transportation Recipes
+  IronIngot -- Minecart
+
+  Minecart -- MinecartWithFurnace
+  Furnace -- MinecartWithFurnace
+
+  Minecart -- MinecartWithChest
+  Chest -- MinecartWithChest
+
+  Sticks -- Rail
+  IronIngot -- Rail
+
+  Sticks -- PoweredRail
+  GoldIngot -- PoweredRail
+  RedstoneDust -- PoweredRail
+
+  StonePressurePlate -- DetectorRail
+  IronIngot -- DetectorRail
+  RedstoneDust -- DetectorRail
+
+  WoodenPlank -- Boat
+
+  // Mechanism Recipes
+
+  //// Doors
+
+  WoodenPlank -- Trapdoor
+
+  WoodenPlank -- PressurePlate
+
+  Stone -- PressurePlate
+
+  Stone -- Button
+
+  RedstoneDust -- RedstoneTorch
+  Stick -- Redstone Torch
+
+  Cobblestone -- Lever
+  Stick -- Lever
+
+  WoodenPlank -- TripwireHook
+  IronIngot -- TripwireHook
+  Sticks -- TripwireHook
+
+  WoodenPlank -- NoteBlock
+  RedstoneDust -- NoteBlock
+
+  WoodenPlank -- Jukebox
+  DiamondGem -- Jukebox
+
+  Cobblestone -- Dispenser
+  RedstoneDust -- Dispenser
+  Bow -- Dispenser
+
+  Stone -- RedstoneRepeater
+  RedstoneDust -- RedstoneRepeater
+  RedstoneTorch -- RedstoneRepeater
+
+  Cobblestone -- Piston
+  RedstoneDust -- Piston
+  WoodenPlank -- Piston
+  IronIngot -- Piston
+
+  Piston -- StickyPiston
+  Slimeball -- StickyPiston
+
+  RedstoneDust -- RedstoneLamp
+  Glowstoneblock -- RedstoneLamp
+
+  // Food Recipes
+
+  // Miscellaneous Recipes
+
+  SugarCane -- Paper
+  
+  Paper -- Book
+  Leather -- Book
+
+  // Dye Recipes
+
+  // Wool Recipes
+
+  // Enchantment & Brewing Recipes
+
+
+  // Unsorted
+    
+  WoodenPlank -- WoodenDoor 
+  WoodenPlank -- WoodenTrapdoor
+
+  WoodenPlank -- WoodenPressurePlate
+
+  DiamondOre -- DiamondGems
+  
+  Sticks -- IronSword
+  IronIngot -- IronSword
+
+}
