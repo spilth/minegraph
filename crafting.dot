@@ -1,197 +1,60 @@
 graph {
+  fontsize=24
+  label="Minecraft Recipes"
+  labelloc=t
+
   rankdir=LR
-  ranksep=4.0
+  ranksep=2.0
 
-  // node [shape=square, labelloc=b, height=2, width=2]
-  // Wood [image="wood-pine.png"]
+  edge [
+    color=gray
+  ]
 
-	/*
-  subgraph cluster_0 {
-    label="Basic Recipes"
-    
-    WoodenPlank
-    Sticks
-    Torch
-    CraftingTable
-    Furnace
-    Chest
-  }
-  
-  subgraph cluster_1 {
-    label="Block Recipes"
-
-    Glowstone
-    Wool
-    TNT
-    WoodenSlab
-    StoneSlab
-    WoodenStairs
-    StoneStairs
-    SnowBlock
-    ClayBlock
-    Brick
-    StoneBrick
-    Bookshelf
-    Sandstone
-    SmoothSandstone
-    ChiseledSandstone
-    JackOLantern
-    EnderChest
-  }
-
-  subgraph cluster_2 {
-    label="Tool Recipes"
-
-    WoodenAxe
-    WoodenPickaxe
-    WoodenShovel
-    WoodenHoe
-    
-    IronAxe
-    IronPickaxe
-    IronShovel
-    IronHoe
-
-    DiamondAxe
-    DiamondPickaxe
-    DiamondShovel
-    DiamondHoe
-
-    FlintAndSteel
-    Bucket
-    Compass
-    Map
-    Clock
-    FishingRod
-    Shears
-    FireCharge
-  }
-
-  subgraph clsuter_3 {
-    label="Weapon Recipes"
-
-    WoodenSword
-    IronSword
-    GoldSword
-    DiamonSword
-    Bow
-    Arrows
-  }
-
-  subgraph cluster_4 {
-    label="Armor Recipes"
-
-    LeatherHelmet
-    GoldHelmet
-    IronHelmet
-    DiamondHelmet
-
-    LeatherChestplate
-    GoldChestplate
-    IronChestplate
-    DiamondChestplate
-
-    LeatherLeggings
-    GoldLeggings
-    IronLeggings
-    DiamondLeggings
-
-    LeatherBoots
-    GoldBoots
-    IronBoots
-    DiamondBoots
-  }
-
-  subgraph cluster_5 {
-    label="Transportation Recipes"
-
-    Minecart
-    MinecartWithFurnace
-    MinecartWithChest
-    Rail
-    PoweredRail
-    DetectorRail
-    Boat
-  }
-
-  subgraph cluster_6 {
-    label="Mechanism Recipes"
-
-    WoodenDoor
-    WoodenTrapdoor
-    WoodenPressurePlate
-    Button
-    RedstoneTorch
-    Level
-    TripwireHook
-    NoteBlock
-    Jukebox
-    Dispenser
-    RedstoneRepeater
-    Piston
-    StickyPiston
-    RedstoneLamp
-  }
-
-  subgraph cluster_7 {
-    label="Food Recipes"
-
-    Bowl
-    MushroomStew
-    Bread
-    Sugar
-    Cake
-    Cookie
-    GoldenApple
-    EnchantedGoldenApple
-    MelonBlock
-    MelonSeeds
-    PumpkinSeeds
-  }
-
-  subgraph cluster_8 {
-    label="Misc Recipes"
-
-    Painting
-    Sign
-    Ladder
-    GlassPane
-    IronBar
-    Paper
-    Book
-    BookAndQuill
-    Fence
-    FenceGate
-    Bed
-    GoldIngot
-    EyeOfEnder
-  }
-*/
+  node [
+    color=gray
+    shape=square
+    labelloc=t
+    height=1
+    width=1
+    fontsize=12
+  ]
   
   Wood
 
   // Basic Recipes
+
   Wood -- WoodenPlank
 
-  WoodenPlank -- Sticks
+  Stick [image="images/Grid_Stick.png"]
+  WoodenPlank -- Stick
 
+  Torch [image="images/Grid_Torch.png"]
   Sticks -- Torch
   Coal -- Torch
 
+  CraftingTable [image="images/Grid_Crafting_Table.png" label="Crafting Table"]
   WoodenPlank -- CraftingTable
 
+  Furnace [image="images/Grid_Furnace.png"]
   Cobblestone -- Furnace
 
+  Chest [image="images/Grid_Chest.png"]
   WoodenPlank -- Chest
 
   // Block Recipes
 
+  CoalOre [image="images/Grid_Coal_Ore.png" label="Coal Ore"]
+  Coal [image="images/Grid_Coal_Item.png"]
   Coal -- CoalOre
 
+  IronOre [image="images/Grid_Iron_Ore.png" label="Iron Ore"]
   IronIngot -- IronOre
 
+  LapisLazuliOre [image="images/Grid_Lapis_Lazuli_Ore.png" label="Lapis Lazuli Ore"]
   LapisLazuliDye -- LapisLazuliOre
 
+  GoldOre [image="images/Grid_Gold_Ore.png" label="Gold Ore"]
+  GoldIngot [image="images/Grid_Gold_Ingot.png" label="Gold Ingot"]
   GoldIngot -- GoldOre
 
   RedstoneDust -- RedstoneOre
@@ -202,6 +65,7 @@ graph {
 
   GlowstoneDust -- Glowstone
 
+  String [image="images/Grid_String.png"]
   String -- Wool
 
   Gunpowerder -- TNT
@@ -211,7 +75,7 @@ graph {
 
   // TODO: Stone Slabs
 
-  WoodenPlank -> WoodStairs
+  WoodenPlank -- WoodStairs
 
   // TODO: Stone Stairs
 
@@ -223,8 +87,9 @@ graph {
 
   Stone -- StoneBrick
 
+  Bookshelf [image="images/Grid_Bookshelf.png"]
   WoodenPlank -- Bookshelf
-  Books -- Bookshelf
+  Book -- Bookshelf
 
   Sand -- Sandstone
 
@@ -403,5 +268,170 @@ graph {
   
   Sticks -- IronSword
   IronIngot -- IronSword
+	
+  /*
+  subgraph cluster_0 {
+    label="Basic Recipes"
+    
+    WoodenPlank
+    Sticks
+    Torch
+    CraftingTable
+    Furnace
+    Chest
+  }
+  
+  subgraph cluster_1 {
+    label="Block Recipes"
+
+    Glowstone
+    Wool
+    TNT
+    WoodenSlab
+    StoneSlab
+    WoodenStairs
+    StoneStairs
+    SnowBlock
+    ClayBlock
+    Brick
+    StoneBrick
+    Bookshelf
+    Sandstone
+    SmoothSandstone
+    ChiseledSandstone
+    JackOLantern
+    EnderChest
+  }
+
+  subgraph cluster_2 {
+    label="Tool Recipes"
+
+    WoodenAxe
+    WoodenPickaxe
+    WoodenShovel
+    WoodenHoe
+    
+    IronAxe
+    IronPickaxe
+    IronShovel
+    IronHoe
+
+    DiamondAxe
+    DiamondPickaxe
+    DiamondShovel
+    DiamondHoe
+
+    FlintAndSteel
+    Bucket
+    Compass
+    Map
+    Clock
+    FishingRod
+    Shears
+    FireCharge
+  }
+
+  subgraph clsuter_3 {
+    label="Weapon Recipes"
+
+    WoodenSword
+    IronSword
+    GoldSword
+    DiamonSword
+    Bow
+    Arrows
+  }
+
+  subgraph cluster_4 {
+    label="Armor Recipes"
+
+    LeatherHelmet
+    GoldHelmet
+    IronHelmet
+    DiamondHelmet
+
+    LeatherChestplate
+    GoldChestplate
+    IronChestplate
+    DiamondChestplate
+
+    LeatherLeggings
+    GoldLeggings
+    IronLeggings
+    DiamondLeggings
+
+    LeatherBoots
+    GoldBoots
+    IronBoots
+    DiamondBoots
+  }
+
+  subgraph cluster_5 {
+    label="Transportation Recipes"
+
+    Minecart
+    MinecartWithFurnace
+    MinecartWithChest
+    Rail
+    PoweredRail
+    DetectorRail
+    Boat
+  }
+
+  subgraph cluster_6 {
+    label="Mechanism Recipes"
+
+    WoodenDoor
+    WoodenTrapdoor
+    WoodenPressurePlate
+    Button
+    RedstoneTorch
+    Level
+    TripwireHook
+    NoteBlock
+    Jukebox
+    Dispenser
+    RedstoneRepeater
+    Piston
+    StickyPiston
+    RedstoneLamp
+  }
+
+  subgraph cluster_7 {
+    label="Food Recipes"
+
+    Bowl
+    MushroomStew
+    Bread
+    Sugar
+    Cake
+    Cookie
+    GoldenApple
+    EnchantedGoldenApple
+    MelonBlock
+    MelonSeeds
+    PumpkinSeeds
+  }
+
+  subgraph cluster_8 {
+    label="Misc Recipes"
+
+    Painting
+    Sign
+    Ladder
+    GlassPane
+    IronBar
+    Paper
+    Book
+    BookAndQuill
+    Fence
+    FenceGate
+    Bed
+    GoldIngot
+    EyeOfEnder
+  }
+*/
+  
 
 }
+
