@@ -1,5 +1,6 @@
 graph {
   fontsize=24
+  fontname="Helvetica"
   label="Minecraft Recipes"
   labelloc=t
 
@@ -12,11 +13,13 @@ graph {
 
   node [
     color=gray
-    shape=square
+    shape=note
     labelloc=t
     height=1
     width=1
+    //fixedsize=true
     fontsize=12
+    fontname="Helvetica"
   ]
   
   Wood
@@ -45,30 +48,43 @@ graph {
 
   CoalOre [image="images/Grid_Coal_Ore.png" label="Coal Ore"]
   Coal [image="images/Grid_Coal_Item.png"]
-  Coal -- CoalOre
+  CoalOre -- Coal
 
   IronOre [image="images/Grid_Iron_Ore.png" label="Iron Ore"]
-  IronIngot -- IronOre
+  IronOre -- IronIngot -- IronBlock
 
   LapisLazuliOre [image="images/Grid_Lapis_Lazuli_Ore.png" label="Lapis Lazuli Ore"]
-  LapisLazuliDye -- LapisLazuliOre
+  LapisLazuliDye [image="images/Grid_Lapis_Lazuli_Dye.png" label="Lapis Lazuli Dye"]
+  LapisLazuliOre -- LapisLazuliDye -- LapisLazuliBlock
 
   GoldOre [image="images/Grid_Gold_Ore.png" label="Gold Ore"]
   GoldIngot [image="images/Grid_Gold_Ingot.png" label="Gold Ingot"]
-  GoldIngot -- GoldOre
+  GoldOre -- GoldIngot -- GoldBlock
 
-  RedstoneDust -- RedstoneOre
+  RedstoneOre [image="images/Grid_Redstone_Ore.png" label="Redstone Ore"]
+  RedstoneDust [image="images/Grid_Redstone_Dust.png" label="Redstone Dust"]
+  RedstoneOre -- RedstoneDust
 
-  DiamondGems -- DiamondOre
+  Diamond [image="images/Grid_Diamond_Gem.png" label="Diamond"]
+  DiamondOre [image="images/Grid_Diamond_Ore.png" label="Diamond Ore"]
+  DiamondOre -- Diamond -- DiamondBlock
 
-  Emerald -- EmeraldOre
+  Emerald [image="images/Grid_Emerald.png" label="Emerald"]
+  EmeraldOre [image="images/Grid_Emerald_Ore.png" label="Emerald Ore"]
+  EmeraldOre -- Emerald -- EmeraldBlock
 
-  GlowstoneDust -- Glowstone
+  GlowstoneDust [image="images/Grid_Glowstone_Dust.png" label="Glowstone Dust"]
+  GlowstoneBlock [image="images/Grid_Glowstone_Block.png" label="Glowstone Block"]
+  GlowstoneDust -- GlowstoneBlock
 
   String [image="images/Grid_String.png"]
+  Wool [image="images/Grid_White_Wool.png"]
   String -- Wool
 
-  Gunpowerder -- TNT
+  Gunpowder [image="images/Grid_Gunpowder.png"]
+  Sand [image="images/Grid_Sand.png"]
+  TNT [image="images/Grid_TNT.png"]
+  Gunpowder -- TNT
   Sand -- TNT
 
   WoodenPlank -- WoodSlab
@@ -79,27 +95,43 @@ graph {
 
   // TODO: Stone Stairs
 
-  Snowballs -- SnowBlock
+  Snowball [image="images/Grid_Snowball.png"]
+  SnowBlock [image="images/Grid_Snow_Block.png" label="Snow Block"]
+  Snowball -- SnowBlock
 
+  Clay [image="images/Grid_Clay_Item.png"]
+  ClayBlock [image="images/Grid_Clay_Block.png" label="Clay Block"]
   Clay -- ClayBlock
 
+  ClayBrick [image="images/Grid_Clay_Brick.png" label="Clay Brick"]
+  Brick [image="images/Grid_Brick_Block.png" label="Brick"]
   ClayBrick -- Brick
 
+  StoneBrick [image="images/Grid_Stone_Brick.png" label="Stone Brick"]
+  Stone [image="images/Grid_Stone.png" label="Stone"]
   Stone -- StoneBrick
 
   Bookshelf [image="images/Grid_Bookshelf.png"]
+  Book [image="images/Grid_Book.png"]
   WoodenPlank -- Bookshelf
   Book -- Bookshelf
 
+  Sandstone [image="images/Grid_Sandstone.png" label="Sandstone"]
   Sand -- Sandstone
 
+  SmoothSandstone [image="images/Grid_Smooth_Sandstone.png" label="Smooth Sandstone"]
   Sandstone -- SmoothSandstone
 
   SandstoneSlab -- ChiseledSandstone
 
+  Pumpkin [image="images/Grid_Pumpkin.png"]
+  JackOLantern [image="images/Grid_Jack-O-Lantern.png"]
   Pumpkin -- JackOLantern
   Torch -- JackOLantern
 
+  Obsidian [image="images/Grid_Obsidian.png"]
+  EyeOfEnder [image="images/Grid_Eye_of_Ender.png" label="Eye of Ender"]
+  EnderChest [image="images/Grid_Ender_Chest.png" label="Ender Chest"]
   Obsidian -- EnderChest
   EyeOfEnder -- EnderChest
 
@@ -117,7 +149,7 @@ graph {
   GoldIngot -- GoldenAxe
 
   Sticks -- DiamondAxe
-  DiamondGems -- DiamondAxe
+  Diamond -- DiamondAxe
 
   //// Pickaxes
 
@@ -136,28 +168,39 @@ graph {
 
   // Tools Continued...
 
+  Flint [image="images/Grid_Flint.png"]
+  FlintAndSteel [image="images/Grid_Flint_and_Steel.png" label="Flint and Steel"]
   IronIngot -- FlintAndSteel
   Flint -- FlintAndSteel
 
+  Bucket [image="images/Grid_Bucket.png"]
   IronIngot -- Bucket
 
+  Paper [image="images/Grid_Paper.png"]
+  Compass [image="images/Grid_Compass.png"]
+  Map [image="images/Grid_Empty_Map.png"]
   Paper -- Map
   Compass -- Map
 
+  Clock [image="images/Grid_Clock.png"]
   GoldIngot -- Clock
   RedstoneDust -- Clock
 
   IronIngot -- Compass
   RedstoneDust -- Compass
 
+  FishingRod [image="images/Grid_Fishing_Rod.png"]
   Stick -- FishingRod
   String -- FishingRod
   
+  Shears [image="images/Grid_Shears.png"]
   IronIngot -- Shears
 
-  BlazePower -- FireCharge
+  BlazePowder [image="images/Grid_Blaze_Powder.png" label="Blaze Powder"]
+  FireCharge [image="images/Grid_Fire_Charge.png" label="Fire Charge"]
+  BlazePowder -- FireCharge
   Coal -- FireCharge
-  Gunpower -- FireCharge
+  Gunpowder -- FireCharge
 
   // Weapon Recipes
 
@@ -175,23 +218,30 @@ graph {
   // Transportation Recipes
   IronIngot -- Minecart
 
+  Minecart [image="images/Grid_Minecart.png"]
+  MinecartWithFurnace [image="images/Grid_Powered_Minecart.png"]
   Minecart -- MinecartWithFurnace
   Furnace -- MinecartWithFurnace
 
+  MinecartWithChest [image="images/Grid_Storage_Minecart.png"]
   Minecart -- MinecartWithChest
   Chest -- MinecartWithChest
 
+  Rail [image="images/Grid_Rails.png"]
   Sticks -- Rail
   IronIngot -- Rail
 
+  PoweredRail [image="images/Grid_Powered_Rail.png"]
   Sticks -- PoweredRail
   GoldIngot -- PoweredRail
   RedstoneDust -- PoweredRail
 
+  DetectorRail [image="images/Grid_Detector_Rail.png"]
   StonePressurePlate -- DetectorRail
   IronIngot -- DetectorRail
   RedstoneDust -- DetectorRail
 
+  Boat [image="images/Grid_Boat.png"]
   WoodenPlank -- Boat
 
   // Mechanism Recipes
@@ -207,7 +257,7 @@ graph {
   Stone -- Button
 
   RedstoneDust -- RedstoneTorch
-  Stick -- Redstone Torch
+  Stick -- RedstoneTorch
 
   Cobblestone -- Lever
   Stick -- Lever
@@ -239,7 +289,7 @@ graph {
   Slimeball -- StickyPiston
 
   RedstoneDust -- RedstoneLamp
-  Glowstoneblock -- RedstoneLamp
+  GlowstoneBlock -- RedstoneLamp
 
   // Food Recipes
 
@@ -263,8 +313,6 @@ graph {
   WoodenPlank -- WoodenTrapdoor
 
   WoodenPlank -- WoodenPressurePlate
-
-  DiamondOre -- DiamondGems
   
   Sticks -- IronSword
   IronIngot -- IronSword
